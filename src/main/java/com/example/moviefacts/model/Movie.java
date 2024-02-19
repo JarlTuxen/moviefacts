@@ -1,6 +1,6 @@
 package com.example.moviefacts.model;
 
-public class Movie {
+public class Movie implements Comparable<Movie>{
 //Movie POJO
     //Year;Length;Title;Subject;Popularity;Awards
 
@@ -74,4 +74,10 @@ public class Movie {
                 '}';
     }
 
+    @Override
+    public int compareTo(Movie movie) {
+        //er this.length < movie.length giver det negativt tal
+        //den er så før i rækkefølgen
+        return this.length - movie.length;
+    }
 }
