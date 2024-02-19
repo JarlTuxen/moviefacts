@@ -77,7 +77,8 @@ public class Movie implements Comparable<Movie>{
     @Override
     public int compareTo(Movie movie) {
         //er this.length < movie.length giver det negativt tal
-        //den er så før i rækkefølgen
+        //så er den før i rækkefølgen
+        //https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html
         return this.length - movie.length;
     }
 }
