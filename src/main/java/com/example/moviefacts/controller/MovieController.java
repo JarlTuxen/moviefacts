@@ -3,11 +3,10 @@ package com.example.moviefacts.controller;
 import com.example.moviefacts.model.Movie;
 import com.example.moviefacts.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -31,6 +30,14 @@ public class MovieController {
     @GetMapping("/findall")
     public List<Movie> findall(){
         return movieRepository.findAll();
+    }
+
+    //bør være service
+    @GetMapping("/findallsort")
+    public List<Movie> findallSort(){
+        List<Movie> listMovie = movieRepository.findAll();
+        Collections.sort(listMovie);
+        return listMovie;
     }
 
     //bør være service
